@@ -75,10 +75,11 @@ $(function() {
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.         
          */
-        it('should exist', function() {
+        it('should exist', function(done) {
             // checks to see if an object with class 'entry' has been loaded from feeds
-            var feedEntry = document.querySelector('.feed');
-            expect(typeof feedEntry.querySelectorAll('.entry')[0]).toBe("object");
+            var feedEntry = document.querySelector('.feed .entry');
+            expect (feedEntry).toBeDefined();
+            done();
         });
     });
 
